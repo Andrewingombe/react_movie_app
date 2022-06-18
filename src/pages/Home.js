@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
+import { useMoviesContext } from "../hooks/useMoviesContext";
 
 const Home = () => {
-  const [movies, setMovies] = useState(null);
   const [liked, setLiked] = useState(false);
+
+  const { movies, dispatch } = useMoviesContext();
 
   const handleLiked = () => {
     setLiked((prev) => (prev = !liked));
-    console.log(liked);
   };
 
   useEffect(() => {
@@ -17,7 +18,9 @@ const Home = () => {
       );
 
       const data = await response.json();
-      setMovies(data.results);
+      if (response.ok) {
+        dispatch({ type: "FETCH_MOVIE", payload: data.results });
+      }
     };
 
     fetchMovies();
