@@ -1,6 +1,12 @@
 /* google font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Layout styles */
 :root {
   --primary: #1aac83;
@@ -8,7 +14,6 @@
 
 body {
   background-color: #f1f1f1;
-  margin: 0;
   font-family: "Poppins", sans-serif;
 }
 
@@ -23,6 +28,10 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+header h1 {
+  color: var(--primary);
 }
 
 .nav-list {
@@ -57,6 +66,12 @@ header a {
   gap: 20px;
 }
 
+.movie-wrapper {
+  padding: 5px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
 .image-wrapper {
   width: 100%;
   max-width: 400px;
@@ -66,6 +81,18 @@ header a {
   width: 100%;
   height: 100%;
   border-radius: 6px;
+}
+
+.movie-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5em 0.938em;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {

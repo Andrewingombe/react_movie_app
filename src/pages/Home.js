@@ -3,6 +3,12 @@ import Movie from "../components/Movie";
 
 const Home = () => {
   const [movies, setMovies] = useState(null);
+  const [liked, setLiked] = useState(false);
+
+  const handleLiked = () => {
+    setLiked((prev) => (prev = !liked));
+    console.log(liked);
+  };
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -18,7 +24,15 @@ const Home = () => {
   }, []);
   return (
     <div className="home">
-      {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
+      {movies &&
+        movies.map((movie) => (
+          <Movie
+            key={movie.id}
+            movie={movie}
+            liked={liked}
+            handleLiked={handleLiked}
+          />
+        ))}
     </div>
   );
 };
