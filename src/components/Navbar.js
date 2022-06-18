@@ -16,7 +16,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to={"/liked"}>
-              <p>Liked Movies</p>
+              <p>Liked</p>
             </Link>
           </li>
         </ul>

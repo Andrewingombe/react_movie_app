@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
+import Movie from "../components/Movie";
 
 const Home = () => {
   const [movies, setMovies] = useState(null);
-
-  console.log(movies);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -18,16 +17,8 @@ const Home = () => {
     fetchMovies();
   }, []);
   return (
-    <div>
-      {movies &&
-        movies.map((movie) => (
-          <div>
-            <img
-              src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
-              alt={movie.original_title}
-            />
-          </div>
-        ))}
+    <div className="home">
+      {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
     </div>
   );
 };
