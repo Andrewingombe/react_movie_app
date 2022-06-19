@@ -1,4 +1,4 @@
-const Movie = ({ movie, handleLiked }) => {
+const Movie = ({ movie }) => {
   return (
     <div className="movie-wrapper">
       <div className="image-wrapper">
@@ -9,13 +9,17 @@ const Movie = ({ movie, handleLiked }) => {
       </div>
 
       <div className="movie-details">
-        <h3>{movie.title}</h3>
-        <>
-          <button className="movie-btn">Details</button>
-          <button onClick={handleLiked} className="movie-btn">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <h3>{movie.title}</h3>
+          <button style={{ marginTop: "auto" }} className="movie-btn">
             Like
           </button>
-        </>
+        </div>
       </div>
     </div>
   );

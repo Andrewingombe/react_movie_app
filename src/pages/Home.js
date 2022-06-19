@@ -1,15 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Movie from "../components/Movie";
 import { useMoviesContext } from "../hooks/useMoviesContext";
 
 const Home = () => {
-  const [liked, setLiked] = useState(false);
-
   const { movies, dispatch } = useMoviesContext();
-
-  const handleLiked = () => {
-    setLiked((prev) => (prev = !liked));
-  };
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -24,18 +18,10 @@ const Home = () => {
     };
 
     fetchMovies();
-  }, []);
+  }, [dispatch]);
   return (
     <div className="home">
-      {movies &&
-        movies.map((movie) => (
-          <Movie
-            key={movie.id}
-            movie={movie}
-            liked={liked}
-            handleLiked={handleLiked}
-          />
-        ))}
+      {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
     </div>
   );
 };
