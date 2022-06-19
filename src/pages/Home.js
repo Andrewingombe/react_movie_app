@@ -5,6 +5,7 @@ import { useMoviesContext } from "../hooks/useMoviesContext";
 const Home = () => {
   const { movies, dispatch } = useMoviesContext();
 
+  // Fetch popular movies from API
   useEffect(() => {
     const fetchMovies = async () => {
       const response = await fetch(

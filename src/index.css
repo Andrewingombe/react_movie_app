@@ -74,6 +74,8 @@ header a {
   margin-bottom: 20px;
 }
 
+/* Movie cards styles */
+
 .movie-wrapper {
   padding: 5px;
   border-radius: 6px;
@@ -135,6 +137,8 @@ header a {
   height: 70vh;
   color: #333;
 }
+
+/* Media queries */
 
 @media (max-width: 768px) {
   .home {

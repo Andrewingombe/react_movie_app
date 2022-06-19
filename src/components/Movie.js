@@ -5,6 +5,7 @@ const Movie = ({ movie }) => {
   const isLiked = likedMovies.some((liked) => liked.id === movie.id);
 
   const handleClick = () => {
+    // check if liked movie already exits
     if (isLiked) {
       const filteredMovies = likedMovies.filter((item) => item.id !== movie.id);
       dispatch({ type: "UPDATE_LIKED_MOVIES", payload: filteredMovies });
