@@ -80,6 +80,17 @@ header a {
   background-color: #fff;
 }
 
+.movie-details h3 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+  color: #333;
+}
+
 .image-wrapper {
   width: 100%;
   max-width: 400px;
@@ -117,19 +128,29 @@ header a {
   cursor: pointer;
 }
 
+.no-liked-movies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  color: #333;
+}
+
 @media (max-width: 768px) {
   .home {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .movie-details h3 {
+    font-size: 15px;
+  }
+
+  .pages {
+    padding: 70px 20px 20px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .home {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 375px) {
   .home {
     grid-template-columns: 1fr;
   }
