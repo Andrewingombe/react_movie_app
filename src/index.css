@@ -68,6 +68,12 @@ header a {
   gap: 20px;
 }
 
+.page-title {
+  color: #1aac83;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
 .movie-wrapper {
   padding: 5px;
   border-radius: 6px;
@@ -94,7 +100,21 @@ header a {
   color: var(--primary);
   background-color: transparent;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.movie-btn--active {
+  display: block;
+  width: 100%;
+  padding: 0.5em 0.938em;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  color: #fff;
+  background-color: var(--primary);
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

@@ -4,11 +4,13 @@ import { useMoviesContext } from "../hooks/useMoviesContext";
 const Liked = () => {
   const { likedMovies } = useMoviesContext();
 
-  console.log(likedMovies);
   return (
-    <div className="home">
-      {likedMovies &&
-        likedMovies.map((movie) => <Movie key={movie.id} movie={movie} />)}
+    <div>
+      <h2 className="page-title">Liked Movies</h2>
+      <div className="home">
+        {likedMovies &&
+          likedMovies.map((movie) => <Movie key={movie.id} movie={movie} />)}
+      </div>
     </div>
   );
 };

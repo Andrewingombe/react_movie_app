@@ -3,9 +3,7 @@ import Movie from "../components/Movie";
 import { useMoviesContext } from "../hooks/useMoviesContext";
 
 const Home = () => {
-  const { movies, dispatch, likedMovies } = useMoviesContext();
-
-  // console.log(likedMovies);
+  const { movies, dispatch } = useMoviesContext();
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -22,8 +20,12 @@ const Home = () => {
     fetchMovies();
   }, [dispatch]);
   return (
-    <div className="home">
-      {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
+    <div>
+      <h2 className="page-title">Popular Movies</h2>
+      <div className="home">
+        {movies &&
+          movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
+      </div>
     </div>
   );
 };

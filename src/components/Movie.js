@@ -1,10 +1,16 @@
 import { useMoviesContext } from "../hooks/useMoviesContext";
 
 const Movie = ({ movie }) => {
-  const { dispatch } = useMoviesContext();
+  const { dispatch, likedMovies } = useMoviesContext();
+  const isLiked = likedMovies.some((liked) => liked.id === movie.id);
 
   const handleClick = () => {
-    dispatch({ type: "LIKE_MOVIE", payload: movie });
+    if (isLiked) {
+      const filteredMovies = likedMovies.filter((item) => item.id !== movie.id);
+      dispatch({ type: "UPDATE_LIKED_MOVIES", payload: filteredMovies });
+    } else {
+      dispatch({ type: "LIKE_MOVIE", payload: movie });
+    }
   };
 
   return (
@@ -27,9 +33,9 @@ const Movie = ({ movie }) => {
           <button
             onClick={handleClick}
             style={{ marginTop: "auto" }}
-            className="movie-btn"
+            className={isLiked ? "movie-btn--active" : "movie-btn"}
           >
-            Like
+            {isLiked ? "Unlike" : "Like"}
           </button>
         </div>
       </div>

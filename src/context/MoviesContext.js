@@ -25,6 +25,12 @@ export const MoviesReducer = (state = intitialState, action) => {
         likedMovies: state.likedMovies.concat(action.payload),
       };
 
+    case "UPDATE_LIKED_MOVIES":
+      return {
+        ...state,
+        likedMovies: action.payload,
+      };
+
     default:
       return state;
   }
