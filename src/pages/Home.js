@@ -3,7 +3,9 @@ import Movie from "../components/Movie";
 import { useMoviesContext } from "../hooks/useMoviesContext";
 
 const Home = () => {
-  const { movies, dispatch } = useMoviesContext();
+  const { movies, dispatch, likedMovies } = useMoviesContext();
+
+  // console.log(likedMovies);
 
   useEffect(() => {
     const fetchMovies = async () => {

@@ -1,4 +1,12 @@
+import { useMoviesContext } from "../hooks/useMoviesContext";
+
 const Movie = ({ movie }) => {
+  const { dispatch } = useMoviesContext();
+
+  const handleClick = () => {
+    dispatch({ type: "LIKE_MOVIE", payload: movie });
+  };
+
   return (
     <div className="movie-wrapper">
       <div className="image-wrapper">
@@ -16,7 +24,11 @@ const Movie = ({ movie }) => {
           }}
         >
           <h3>{movie.title}</h3>
-          <button style={{ marginTop: "auto" }} className="movie-btn">
+          <button
+            onClick={handleClick}
+            style={{ marginTop: "auto" }}
+            className="movie-btn"
+          >
             Like
           </button>
         </div>
