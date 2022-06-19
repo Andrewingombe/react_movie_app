@@ -23,12 +23,7 @@ const Movie = ({ movie }) => {
       </div>
 
       <div className="movie-details">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <div>
           <h3>{movie.title}</h3>
           <button
             onClick={handleClick}
